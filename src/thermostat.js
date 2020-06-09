@@ -2,6 +2,7 @@
 
 class Thermostat {
   constructor() {
+    this.MAXIMUM_TEMPERATURE = 25
     this.MINIMUM_TEMPERATURE = 10;
     this.temperature = 20;
   }
@@ -11,7 +12,10 @@ class Thermostat {
   };
 
   upTemp() {
-    this.temperature ++;
+    if (this.isMaxTemp()){ }
+    else {
+      this.temperature ++;
+    }
   };
 
   downTemp() {
@@ -23,6 +27,10 @@ class Thermostat {
 
   isMinTemp() {  // is , convention for a boolean
     return this.temperature === this.MINIMUM_TEMPERATURE;
+  }
+
+  isMaxTemp() {
+    return this.temperature === this.MAXIMUM_TEMPERATURE;
   }
   // === comparison similar need to be
 
