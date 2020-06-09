@@ -50,6 +50,16 @@ thermostat.getTemperature()  === result of the function
     }
     expect(thermostat.getTemperature()).toEqual(32);
   })
+  it ('reset to the default temperature', function(){
+    for (var i=0; i < 6; i++){
+      thermostat.upTemp();
+    }
+    thermostat.resetTemp();
+    expect(thermostat.getTemperature()).toEqual(20);
+  });
+
+
+
 
 
 }); //describe

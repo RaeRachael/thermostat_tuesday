@@ -47,6 +47,9 @@ class Thermostat {
     this.isPowerSaveOn = true;
   }
 
+  resetTemp() {
+    this.temperature = 20;
+  }
 
 
 };
