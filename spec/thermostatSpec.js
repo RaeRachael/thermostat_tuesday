@@ -59,22 +59,26 @@ thermostat.getTemperature()  === result of the function
   });
 
   describe('energy usage', function(){
+
     it("should return 'low-usage' if temp < 18 degrees", function(){
       for (var i = 0; i < 3; i++){
         thermostat.downTemp();
       }
       expect(thermostat.energyUsage()).toEqual('low-usage')
-    })
+    });
     it("should return 'medium-usage' if temp < 25 degrees", function(){
       for (var i = 0; i < 2; i++){
         thermostat.downTemp();
       }
       expect(thermostat.energyUsage()).toEqual('medium-usage')
-    })
+    });
+    it("should return 'high-usage' if temp >= 25 degrees", function(){
+      for (var i = 0; i < 5; i++){
+        thermostat.upTemp();
+      }
+      expect(thermostat.energyUsage()).toEqual('high-usage')
+    });
+
   })
-
-
-
-
 
 }); //describe
