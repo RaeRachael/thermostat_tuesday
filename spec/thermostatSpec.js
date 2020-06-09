@@ -36,14 +36,20 @@ thermostat.getTemperature()  === result of the function
     expect(thermostat.getTemperature()).toEqual(10);
   });
 
-  it('when power saving mood is on, max temp is 25 degrees', function(){
+  it('when power saving mode is on, max temp is 25 degrees', function(){
     for (var i = 0; i < 6; i++){ //we count how many times we use that method
       thermostat.upTemp();
     }
     expect(thermostat.getTemperature()).toEqual(25);
   })
 
-
+  it('when power saving mode is off, max temp is 32 degrees', function(){
+    thermostat.powerSaveOff()
+    for (var i = 0; i < 13; i++){ //we count how many times we use that method
+      thermostat.upTemp();
+    }
+    expect(thermostat.getTemperature()).toEqual(32);
+  })
 
 
 }); //describe

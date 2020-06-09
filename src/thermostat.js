@@ -2,9 +2,10 @@
 
 class Thermostat {
   constructor() {
-    this.MAXIMUM_TEMPERATURE = 25
+    this.MAXIMUM_TEMPERATURE = [25, 32]
     this.MINIMUM_TEMPERATURE = 10;
     this.temperature = 20;
+    this.powerSave = true
   }
 
   getTemperature() {
@@ -30,9 +31,17 @@ class Thermostat {
   }
 
   isMaxTemp() {
-    return this.temperature === this.MAXIMUM_TEMPERATURE;
+    if (this.powerSave) {
+      return this.temperature === this.MAXIMUM_TEMPERATURE[0];
+    } else {
+      return this.temperature === this.MAXIMUM_TEMPERATURE[1];
+    }
   }
   // === comparison similar need to be
+
+  powerSaveOff() {
+    this.powerSave = false;
+  }
 
 
 
