@@ -5,7 +5,7 @@ class Thermostat {
     this.MAXIMUM_TEMPERATURE = [25, 32];
     this.MINIMUM_TEMPERATURE = 10;
     this.temperature = 20;
-    this.isPowerSave = true
+    this.isPowerSaveOn = true
   }
 
   getTemperature() {
@@ -31,7 +31,7 @@ class Thermostat {
   }
 
   isMaxTemp() {
-    if (this.isPowerSave) {
+    if (this.isPowerSaveOn) {
       return this.temperature === this.MAXIMUM_TEMPERATURE[0];
     } else {
       return this.temperature === this.MAXIMUM_TEMPERATURE[1];
@@ -40,7 +40,11 @@ class Thermostat {
   // === comparison similar need to be
 
   powerSaveOff() {
-    this.isPowerSave = false;
+    this.isPowerSaveOn = false;
+  }
+
+  powerSaveOn() {
+    this.isPowerSaveOn = true;
   }
 
 
