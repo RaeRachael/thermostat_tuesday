@@ -28,5 +28,15 @@ thermostat.getTemperature()  === result of the function
     thermostat.downTemp()
     expect(thermostat.getTemperature()).toBeLessThan(20)
   });
+  // Set the minimum temperature
+  it('no less than 10 degress', function(){
+    for (var i = 0; i < 11; i++){ //we count how many times we use that method
+      thermostat.downTemp();
+    }
+    expect(thermostat.getTemperature()).toEqual(10);
+  });
+
+
+
 
 }); //describe
