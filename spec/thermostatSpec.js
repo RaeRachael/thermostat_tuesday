@@ -23,4 +23,10 @@ thermostat.getTemperature()  === result of the function
     expect(thermostat.getTemperature()).toBeGreaterThan(20)
   });
 
+// You can decrease the temperature with a down function
+  it('can decrease the temperature', function(){
+    thermostat.downTemp()
+    expect(thermostat.getTemperature()).toBeLessThan(20)
+  });
+
 }); //describe
