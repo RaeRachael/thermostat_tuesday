@@ -1,7 +1,7 @@
 'use strict';
 
 class Thermostat {
-  constructor() {
+  constructor() { // priv
     this.MAXIMUM_TEMPERATURE = [25, 32];
     this.MINIMUM_TEMPERATURE = 10;
     this.DEFAULT_TEMPERATURE = 20;
@@ -29,11 +29,11 @@ class Thermostat {
     this.temperature --;
   }
 
-  isMinTemp() {  // is , convention for a boolean
+  isMinTemp() {  // is , convention for a boolean //priv
     return this.temperature === this.MINIMUM_TEMPERATURE;
   }
 
-  isMaxTemp() {
+  isMaxTemp() { //priv
     if (this.isPowerSaveOn) {
       return this.temperature === this.MAXIMUM_TEMPERATURE[0];
     } else {
