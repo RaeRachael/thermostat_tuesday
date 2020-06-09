@@ -7,5 +7,9 @@ class Thermostat {
 
   getTemperature() {
     return this.temperature;
-  }
+  };
+
+  upTemp() {
+    this.temperature ++;
+  };
 };
