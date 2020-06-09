@@ -5,8 +5,10 @@ class Thermostat {
     this.MAXIMUM_TEMPERATURE = [25, 32];
     this.MINIMUM_TEMPERATURE = 10;
     this.DEFAULT_TEMPERATURE = 20;
+    this.MEDIUM_USAGE_LOW_LIMIT = 18;
+    this.HIGH_USAGE_LOW_LIMIT = 25;
     this.temperature = this.DEFAULT_TEMPERATURE;
-    this.isPowerSaveOn = true
+    this.isPowerSaveOn = true;
   }
 
   getTemperature() {
@@ -53,9 +55,9 @@ class Thermostat {
   }
 
   energyUsage() {
-    if (this.temperature < 18) {
+    if (this.temperature < this.MEDIUM_USAGE_LOW_LIMIT) {
       return 'low-usage'
-    } else if (this.temperature < 25) {
+    } else if (this.temperature < this.HIGH_USAGE_LOW_LIMIT) {
       return 'medium-usage'
     } else {
       return 'high-usage'
