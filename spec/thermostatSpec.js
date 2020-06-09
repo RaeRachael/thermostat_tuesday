@@ -65,6 +65,12 @@ thermostat.getTemperature()  === result of the function
       }
       expect(thermostat.energyUsage()).toEqual('low-usage')
     })
+    it("should return 'medium-usage' if temp < 25 degrees", function(){
+      for (var i = 0; i < 2; i++){
+        thermostat.downTemp();
+      }
+      expect(thermostat.energyUsage()).toEqual('medium-usage')
+    })
   })
 
 
