@@ -52,5 +52,9 @@ class Thermostat {
     this.temperature = this.DEFAULT_TEMPERATURE;
   }
 
+  energyUsage() {
+    return 'low-usage'
+  }
+
 
 };

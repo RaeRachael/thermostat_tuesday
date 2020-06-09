@@ -58,6 +58,15 @@ thermostat.getTemperature()  === result of the function
     expect(thermostat.getTemperature()).toEqual(20);
   });
 
+  describe('energy usage', function(){
+    it("should return 'low-usage' if temp < 18 degrees", function(){
+      for (var i = 0; i < 3; i++){
+        thermostat.downTemp();
+      }
+      expect(thermostat.energyUsage()).toEqual('low-usage')
+    })
+  })
+
 
 
 
