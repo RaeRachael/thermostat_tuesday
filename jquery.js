@@ -21,4 +21,9 @@ $(document).ready( function() {
     thermostat.powerSaveOff()
   });
 
+  $('#resetTemp').click( function() {
+    thermostat.resetTemp();
+    $('#getTemperature').text(thermostat.getTemperature());
+  });
+
 });
