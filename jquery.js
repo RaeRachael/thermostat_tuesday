@@ -44,13 +44,13 @@ $(document).ready( function() {
   }
 
   function update() {
-    $('#getTemperature').text(thermostat.getTemperature());
+    $('#getTemperature').text(thermostat.getTemperature() + ' c');
     $('#energyUsage').css('background-color', colour());
   }
 
   function updateweather() {
     $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=abc5597e86100be39e5d15328031e161', function(data) {
-      $('#weatherData').text(Math.round(data.main.temp - 273));
+      $('#weatherData').text(Math.round(data.main.temp - 273) + ' c');
     }) 
   }
 
