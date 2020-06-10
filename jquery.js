@@ -1,19 +1,16 @@
 $(document).ready( function() {
   const thermostat = new Thermostat();
   console.log(thermostat)
-  $('#getTemperature').text(thermostat.getTemperature());
-  $('#energyUsage').css('background-color', colour());
+  update()
 
   $('#upTemp').click( function() {
     thermostat.upTemp()
-    $('#getTemperature').text(thermostat.getTemperature());
-    $('#energyUsage').css('background-color', colour());
+    update()
   });
 
   $('#downTemp').click( function() {
     thermostat.downTemp()
-    $('#getTemperature').text(thermostat.getTemperature());
-    $('#energyUsage').css('background-color', colour());
+    update()
   });
 
   $('#powerSaveOn').click( function() {
@@ -26,8 +23,7 @@ $(document).ready( function() {
 
   $('#resetTemp').click( function() {
     thermostat.resetTemp();
-    $('#getTemperature').text(thermostat.getTemperature());
-    $('#energyUsage').css('background-color', colour());
+    update()
   });
 
   function colour() {
@@ -40,6 +36,11 @@ $(document).ready( function() {
     } else {
       return 'red';
     }
+  }
+
+  function update() {
+    $('#getTemperature').text(thermostat.getTemperature());
+    $('#energyUsage').css('background-color', colour());
   }
 
 });
