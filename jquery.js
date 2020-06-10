@@ -2,6 +2,7 @@ $(document).ready( function() {
   const thermostat = new Thermostat();
   console.log(thermostat)
   update()
+  updateweather()
 
   $('#upTemp').click( function() {
     thermostat.upTemp()
@@ -26,6 +27,10 @@ $(document).ready( function() {
     update()
   });
 
+  $('#updateweather').click( function() {
+    updateweather();
+  });
+
   function colour() {
     var usage
     usage = thermostat.energyUsage()
@@ -41,6 +46,10 @@ $(document).ready( function() {
   function update() {
     $('#getTemperature').text(thermostat.getTemperature());
     $('#energyUsage').css('background-color', colour());
+  }
+
+  function updateweather() {
+    // update weather box
   }
 
 });
