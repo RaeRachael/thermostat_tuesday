@@ -23,24 +23,23 @@ class Thermostat {
   };
 
   downTemp() {
-    if (this.isMinTemp()){  // Go with this method but only if the temperature in already 10 degrees
+    if (this.isMinTemp()){
       return;
     }
     this.temperature --;
   }
 
-  isMinTemp() {  // is , convention for a boolean //priv
+  isMinTemp() {
     return this.temperature === this.MINIMUM_TEMPERATURE;
   }
 
-  isMaxTemp() { //priv
+  isMaxTemp() {
     if (this.isPowerSaveOn) {
       return this.temperature === this.MAXIMUM_TEMPERATURE[0];
     } else {
       return this.temperature === this.MAXIMUM_TEMPERATURE[1];
     }
   }
-  // === comparison similar need to be
 
   powerSaveOff() {
     this.isPowerSaveOn = false;
@@ -63,6 +62,5 @@ class Thermostat {
       return 'high-usage'
     }
   }
-
 
 };
