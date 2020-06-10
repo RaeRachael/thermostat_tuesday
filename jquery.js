@@ -2,6 +2,7 @@ $(document).ready( function() {
   const thermostat = new Thermostat();
   console.log(thermostat)
   $('#getTemperature').text(thermostat.getTemperature());
+  $('#energyUsage').css('background-color', 'orange');
 
   $('#upTemp').click( function() {
     thermostat.upTemp()
